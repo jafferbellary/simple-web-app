@@ -15,7 +15,7 @@ pipeline {
 				echo "Archiving an artifact"
 				archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 			}
-			failed{
+			failure{
 		      echo "Failed to generate an artifact"
 			}
 	     }
