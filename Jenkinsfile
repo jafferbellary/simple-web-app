@@ -34,7 +34,7 @@ pipeline {
 						echo "Failed to deploy an application in staging environment"
 					}
 					always {
-            					emailext body: 'A Test Email', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Execution Status'
+            					emailext body: 'A Test Email', recipientProviders: [developers(), requestor()], subject: 'Jenkins Execution Status', to: 'jiraxray2@gmail.com'
         				}
 				}
 			}
