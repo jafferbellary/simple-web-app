@@ -50,7 +50,9 @@ pipeline {
 			}
 		 }
 		stage("Email Notification"){
-            		emailext body: 'A Test Email', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Execution Status'
+			steps{
+            			emailext body: 'A Test Email', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Execution Status'
+			}
 		 }	
         }
 }
