@@ -6,7 +6,7 @@ pipeline {
      stages {
          stage("Build") {
              steps {
-                 echo "Building an application using maven"
+                 echo "Building an application using maven" 
 				sh 'mvn clean package'
              }
 	     post{
